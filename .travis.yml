@@ -24,4 +24,4 @@ install:
 script:
   - |
     php -S localhost:8080 -t web > /dev/null 2>&1 &
-    server/vendor/bin/codecept run
+    vendor/bin/codecept run
