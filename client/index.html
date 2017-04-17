@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html ng-app="yii2AngApp">
+<head>
+    <!-- CSS -->
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap-theme.min.css" />
+</head>
+<body ng-controller="index">
+
+<nav class="navbar navbar-default">
+    <div class="container">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="#/">Одностраничное приложение</a>
+        </div>
+        <ul class="nav navbar-nav navbar-right">
+            <li><a href="#/"><i class="glyphicon glyphicon-home"></i> Главная</a></li>
+            <li><a href="#/word/index"><i class="glyphicon glyphicon-film"></i> Каталог слов</a></li>
+            <li><a href="#/site/about"><i class="glyphicon glyphicon-tag"></i> О приложении</a></li>
+            <li><a href="#/site/contact"><i class="glyphicon glyphicon-envelope"></i> Обратная связь</a></li>
+        </ul>
+    </div>
+</nav>
+<div id="main" class="container">
+    <!-- Здесь будет динамическое содержимое -->
+    <div ng-view></div>
+</div>
+
+<footer class="text-center">
+    <p>Работает на Yii 2.0.11 и AngularJs 1.6</p>
+</footer>
+
+<!-- AngularJs -->
+<script src="assets/angular/angular.min.js"></script>
+<script src="assets/angular/angular-route.min.js"></script>
+<!-- modules -->
+<script src="app.js"></script>
+<script src="controllers/site.js"></script>
+<script src="models/word.js"></script>
+<script src="controllers/word.js"></script>
+
+</body>
+</html>

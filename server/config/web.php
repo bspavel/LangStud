@@ -8,6 +8,9 @@ $config = [
     'bootstrap' => ['log'],
     'components' => [
         'request' => [
+            'parsers' => [
+                'application/json' => 'yii\web\JsonParser',
+            ],
             // !!! insert a secret key in the following (if it is empty) - this is required by cookie validation
             'cookieValidationKey' => 'lFvC1HvosY9Uo7_UriBzTHK3TgxrsXKL',
         ],
@@ -38,14 +41,16 @@ $config = [
             ],
         ],
         'db' => require(__DIR__ . '/db.php'),
-        /*
+
         'urlManager' => [
             'enablePrettyUrl' => true,
+            'enableStrictParsing' => true,
             'showScriptName' => false,
             'rules' => [
+                ['class' => 'yii\rest\UrlRule', 'controller' => 'word'],
             ],
         ],
-        */
+
     ],
     'params' => $params,
 ];

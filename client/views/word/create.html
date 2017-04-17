@@ -1,0 +1,32 @@
+<div>
+    <h1>Каталог фильмов: добавление фильма</h1>
+
+    <p>{{ message}}</p>
+    <form role="form" name="myForm">
+        <div class= "form-group" ng-class="{error: myForm.word.$invalid}">
+            <label> Word </label>
+            <div>
+                <input name="word" ng-model="word.word" type= "text" class= "form-control" placeholder="Word" required/>
+                <span ng-show="myForm.word.$dirty && myForm.word.$invalid" class="help-inline">Word обязательно</span>
+            </div>
+        </div>
+        <div class= "form-group">
+            <label> Transcription </label>
+            <div>
+                <textarea name="transcription" ng-model="word.transcription" class= "form-control" placeholder= "Transcription"></textarea>
+            </div>
+        </div>
+        <div class= "form-group" ng-class="{error: myForm.translate.$invalid}">
+            <label> Translate </label>
+            <div>
+                <input name="translate" ng-model="word.translate" type= "text" class= "form-control" placeholder="Translate" required/>
+                <!--<span ng-show="myForm.translate.$dirty && myForm.translate.$invalid" class="help-inline">Translate обязателен</span>-->
+            </div>
+        </div>
+
+        <a href="#/word/index" class="btn btn-default">Cancel</a>
+        <button ng-click="createWord(word);"
+                ng-disabled="myForm.$invalid"
+                type="submit" class="btn btn-default">Submit</button>
+    </form>
+</div>

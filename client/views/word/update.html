@@ -1,0 +1,32 @@
+<div>
+    <h1>Каталог слов: редактирование слова</h1>
+
+    <p>{{ message}}</p>
+    <form role="form" name="myForm">
+        <div class= "form-group" ng-class="{error: myForm.word.$invalid}">
+            <label> word </label>
+            <div>
+                <input name="title" ng-model="word.word" type= "text" class= "form-control" placeholder="word" required/>
+                <span ng-show="myForm.word.$dirty && myForm.word.$invalid" class="help-inline">word обязательно</span>
+            </div>
+        </div>
+        <div class= "form-group">
+            <label> transcription </label>
+            <div>
+                <textarea name="transcription" ng-model="word.transcription" class= "form-control" placeholder= "transcription"></textarea>
+            </div>
+        </div>
+        <div class= "form-group" ng-class="{error: myForm.director.$invalid}">
+            <label> translate </label>
+            <div>
+                <input name="translate" ng-model="word.translate" type= "text" class= "form-control" placeholder="translate" required/>
+                <!--<span ng-show="myForm.translate.$dirty && myForm.translate.$invalid" class="help-inline">translate</span>-->
+            </div>
+        </div>
+
+        <a href="#/word/index" class="btn btn-default">Cancel</a>
+        <button ng-click="updateWord(word);"
+                ng-disabled="isClean() || myForm.$invalid"
+                type="submit" class="btn btn-default">Submit</button>
+    </form>
+</div>
