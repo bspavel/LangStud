@@ -21,12 +21,6 @@ class DefaultController extends Controller
                 'corsFilter' => [
                     'class' => Cors::className(),
                 ],
-                'contentNegotiator' => [
-                    'class' => \yii\filters\ContentNegotiator::className(),
-                    'formats' => [
-                        'application/json' => \yii\web\Response::FORMAT_JSON,
-                    ],
-                ],
                 'access' => [
                     'class' => \yii\filters\AccessControl::className(),
                     'only' => ['create', 'update', 'delete'],
